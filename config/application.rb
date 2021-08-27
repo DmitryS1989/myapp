@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module Myapp
   class Application < Rails::Application
+    config.mailer_sender = "movs1989@gmail.com"
+
+    # Configure the class responsible to send e-mails.
+    config.mailer = 'Devise::Mailer'
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
