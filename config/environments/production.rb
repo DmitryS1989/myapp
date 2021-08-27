@@ -61,8 +61,11 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "myapp_production"
-  config.action_mailer.perform_deliveries = true
+
+  # Ignore bad email addresses and do not raise email delivery errors.
+  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = { host: 'https://damp-brook-50173.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -71,13 +74,9 @@ Rails.application.configure do
     domain: 'https://damp-brook-50173.herokuapp.com',
     user_name: Rails.application.credentials.dig(:google_smtp, :email),
     password: Rails.application.credentials.dig(:google_smtp, :password),
-    authentication: 'plain',
+    authentication: :plain,
     enable_starttls_auto: true
-}
-
-  # Ignore bad email addresses and do not raise email delivery errors.
-  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  config.action_mailer.raise_delivery_errors = true
+  }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
