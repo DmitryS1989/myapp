@@ -69,11 +69,11 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.mail.ru',
-    port: 465,
+    address: 'smtp.gmail.com',
+    port: 587,
     domain: 'https://damp-brook-50173.herokuapp.com',
-    user_name: Rails.application.credentials.dig(:mail_smtp, :email),
-    password: Rails.application.credentials.dig(:mail_smtp, :password),
+    user_name: 'movs1989@gmail.com',
+    password: 'Lbvf2005,',
     authentication: :plain,
     enable_starttls_auto: true
   }
