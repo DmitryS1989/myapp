@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Myapp
   class Application < Rails::Application
-
+    config.autoload_paths += %W[#{config.root}/lib]
 
     # Configure the class responsible to send e-mails.
 
