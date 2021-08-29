@@ -77,7 +77,9 @@ Rails.application.configure do
     user_name: Rails.application.credentials.dig(:gmail_smtp, :email),
     password: Rails.application.credentials.dig(:gmail_smtp, :password),
     authentication: 'plain',
-    enable_starttls_auto: true
+    enable_starttls_auto: true,
+    open_timeout: 5,
+    read_timeout: 5
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
