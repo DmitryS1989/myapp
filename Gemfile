@@ -36,6 +36,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
+  gem 'omniauth-rails_csrf_protection'
+  gem 'omniauth-google-oauth2'
 
 end
 
