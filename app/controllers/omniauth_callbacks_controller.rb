@@ -1,4 +1,4 @@
-class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
     # You need to implement the method below in your model (e.g. app/models/user.rb)
     @user = User.from_omniauth(request.env['omniauth.auth'])
@@ -19,10 +19,9 @@ def self.from_omniauth(access_token)
 
   
    unless user
-     @user = User.create(name: data['name'],
-          email: data['email'],
-          password: Devise.friendly_token[0,20]
+     @user = User.create(
+       email: data['email'],
+       password: Devise.friendly_token[0,20]
      )
    end
-  
 end
