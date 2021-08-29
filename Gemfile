@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'rexml'
 gem 'devise'
+gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-google-oauth2'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -36,8 +38,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
-  gem 'omniauth-rails_csrf_protection'
-  gem 'omniauth-google-oauth2'
+
 
 end
 
