@@ -2,9 +2,11 @@
 <!DOCTYPE html>
 <body>
 <div class="d-grid gap-2">
-  <a href="/users/sign_up" class="btn btn-outline-dark" type="button">Sign Up Now</a>
-  <% if user_signed_in? %>
-    <%= link_to 'log out',  destroy_user_session_path, method: :delete%>
+  <% if user_signed_in? == false %>
+    <a href="/users/sign_up" class="btn btn-outline-dark" type="button">Sign Up Now</a>
+  <% else %>
+    <h1> Hello <%= current_user.name %></h1>
+    <%= link_to 'log out', destroy_user_session_path, method: :delete %>
   <% end %>
   <a href="/users/sign" class="btn btn-outline-dark" type="button">Routes)</a>
 </div>
