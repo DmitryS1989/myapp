@@ -2,9 +2,9 @@ class AdvertsController < ApplicationController
   def create
     @advert = current_user.adverts.build(adverts_params)
     if @advert.save
-      redirect_to 'show-my-adverts'
+      redirect_to '/show-my-adverts'
     else
-      render 'static_pages/home'
+      render '/static_pages/home'
     end
   end
 
