@@ -1,0 +1,9 @@
+<div class="card" align_con style="width: 50rem;">
+  <img src="..." class="card-img-top"  alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= link_to advert.user.name %></h5>
+    <p class="card-text"><%= advert.content %></p>
+    <p class="card-text">Posted <%= time_ago_in_words(advert.created_at) %> ago.</p>
+    <a href="#" class="btn btn-primary">See Full</a>
+  </div>
+</div>

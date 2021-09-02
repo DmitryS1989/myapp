@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable, :omniauthable,
          omniauth_providers: [:google_oauth2]
-
+  has_many :adverts, dependent: :destroy
 
 
   def self.from_omniauth(access_token)

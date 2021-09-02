@@ -9,5 +9,13 @@
     <%= link_to 'log out', destroy_user_session_path, method: :delete %>
   <% end %>
   <a href="/users/sign" class="btn btn-outline-dark" type="button">Routes)</a>
+    <div class="row">
+      <aside class="col-md-4">
+        <section class="micropost_form">
+          <%= render 'shared/adverts_form' %>
+        </section>
+      </aside>
+    </div>
+
 </div>
 </body>
