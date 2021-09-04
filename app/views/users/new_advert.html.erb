@@ -1,9 +1,14 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <h1>
-        <%= current_user.name %>
-      </h1>
+      <h1>Add Advert</h1>
+      <div class="row">
+        <aside class="col-md-4">
+          <section class="micropost_form">
+            <%= render 'shared/adverts_form' %>
+          </section>
+        </aside>
+      </div>
     </section>
   </aside>
   <div class="col-md-8">

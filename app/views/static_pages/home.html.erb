@@ -8,13 +8,7 @@
     <h1> Hello <%= current_user.name %></h1>
     <%= link_to 'log out', destroy_user_session_path, method: :delete %>
   <% end %>
-    <div class="row">
-      <aside class="col-md-4">
-        <section class="micropost_form">
-          <%= render 'shared/adverts_form' %>
-        </section>
-      </aside>
-    </div>
+
 
 </div>
 </body>

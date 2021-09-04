@@ -1,4 +1,9 @@
 class AdvertsController < ApplicationController
+
+
+  def show_all_adverts
+    @adverts = Advert.all
+  end
   def create
     @advert = current_user.adverts.build(adverts_params)
     if @advert.save
@@ -14,7 +19,7 @@ class AdvertsController < ApplicationController
   private
 
   def adverts_params
-    params.require(:advert).permit(:content)
+    params.require(:advert).permit(:content, :status, :category)
   end
 
 end

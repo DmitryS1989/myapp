@@ -1,6 +1,11 @@
-<%= form_for(@adverts) do |f| %>
+<%= form_for(@advert) do |f| %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+    <%= f.label :category %>
+    <%= f.select :category, Advert.categories.keys %>
   </div>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Compose new advert..." %>
+  </div>
+
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
