@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   get 'show-my-adverts' => 'users#new_advert'
   get 'show-all-adverts' => 'adverts#show_all_adverts'
   root 'static_pages#home'
-  resources :adverts, only: %i[show create destroy]
+  resources :adverts
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

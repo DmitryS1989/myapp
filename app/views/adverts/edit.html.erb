@@ -1,0 +1,18 @@
+ <%= form_for(@advert) do |f| %>
+    <div class="field">
+      <%= f.label :category %>
+      <%= f.select :category, Advert.categories.keys, autocomplete: "category"%>
+    </div>
+    <div class="field">
+      <%= f.text_area :content, autocomplete: "content"  %>
+    </div>
+   <div class="field">
+     <%= f.label :status %>
+     <%= f.select :status,  Advert.statuses, autocomplete: "status"%>
+   </div>
+
+   <p> <%= button_to "Update", advert_path(@advert), data: { confirm: "Are you sure?" },
+                     method: :patch%></p>
+    <p> <%= button_to "Delete", advert_path(@advert), data: { confirm: "Are you sure?" },
+                  method: :delete %></p>
+  <% end %>

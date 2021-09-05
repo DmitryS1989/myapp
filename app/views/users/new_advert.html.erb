@@ -14,8 +14,20 @@
   <div class="col-md-8">
     <% if current_user.adverts.any? %>
       <h3>My Adverts (<%= current_user.adverts.count %>)</h3>
+    <% end %>
+    <% @adverts.each do |advert| %>
       <ol class="advert">
-        <%= render current_user.adverts %>
+        <div class="card" style="width: 50rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to advert.user.name %></h5>
+            <p class="card-text">Category <%= advert.category %> </p>
+            <p class="card-text"><%= advert.content %></p>
+            <p class="card-text">Posted at <%= advert.created_at %> .</p>
+            <p class="card-text">Status: <%= advert.status %> </p>
+            <p> <%= button_to "Edit Post", edit_advert_path(advert), method: :get %></p>
+          </div>
+        </div>
       </ol>
     <% end %>
   </div>
