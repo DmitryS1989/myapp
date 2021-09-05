@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   def index
-    @users = User.all
+    @users = User.order(created_at: :desc)
   end
 
   def new_advert
@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     @adverts = Advert.all
   end
 
-  def new
-  end
+  def new; end
 
 end
