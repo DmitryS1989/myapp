@@ -24,7 +24,7 @@
           </li>
 
           <% if user_signed_in? == false %>
-            <a class="nav-link" href="show-all-adverts">Sign In</a>
+            <a class="nav-link" href="users/sign_in">Sign In</a>
           <% end %>
           <% if user_signed_in?%>
             <li class="nav-item">
@@ -35,7 +35,7 @@
                 Dropdown
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="/show-all-users">Users</a></li>
+                <li><a class="dropdown-item" href="/users">Users</a></li>
                 <li><a class="dropdown-item" href="/users/edit">Edit</a></li>
                 <li><a class="dropdown-item" href="/users/sign_out" data-method="delete">Exit</a></li>
               </ul>

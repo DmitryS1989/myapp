@@ -25,7 +25,7 @@
             <p class="card-text"><%= advert.content %></p>
             <p class="card-text">Posted at <%= advert.created_at %> .</p>
             <p class="card-text">Status: <%= advert.status %> </p>
-            <p> <%= button_to "Edit Post", edit_advert_path(advert), method: :get %></p>
+            <p> <%= button_to "Edit Advert", edit_advert_path(advert.id), method: :get %></p>
           </div>
         </div>
       </ol>

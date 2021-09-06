@@ -26,6 +26,7 @@ gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-google-oauth2'
 gem "rolify"
 
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

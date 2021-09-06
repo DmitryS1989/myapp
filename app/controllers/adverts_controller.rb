@@ -7,6 +7,7 @@ class AdvertsController < ApplicationController
   def create
     @advert = current_user.adverts.build(adverts_params)
     if @advert.save
+      current_user.add_role :creator, @advert
       redirect_to '/show-my-adverts'
     else
       render '/static_pages/home'
@@ -14,6 +15,7 @@ class AdvertsController < ApplicationController
   end
 
   def edit
+    @adverts = Advert
     @advert = Advert.find(params[:id])
 
   end

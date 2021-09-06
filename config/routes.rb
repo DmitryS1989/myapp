@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'help' => 'static_pages#help'
   get 'about' => 'static_pages#about'
   get 'signup' => 'users#new'
-  get 'show-all-users' => 'users#index'
+  get 'users' => 'users#index'
   get 'show-my-adverts' => 'users#new_advert'
   get 'show-all-adverts' => 'adverts#show_all_adverts'
   root 'static_pages#home'

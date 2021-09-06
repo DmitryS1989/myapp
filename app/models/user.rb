@@ -7,6 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable, :omniauthable,
          omniauth_providers: [:google_oauth2]
   has_many :adverts, dependent: :destroy
+  after_create :assign_default_role
 
   def self.from_omniauth(access_token)
     data = access_token.info
@@ -18,6 +19,10 @@ class User < ApplicationRecord
     )
     user
   end
+  
+  private
+  
+  def assign_default_role
+    add_role(:user) if roles.blank?
+  end
 end
-
-
