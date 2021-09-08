@@ -1,5 +1,4 @@
 class Advert < ApplicationRecord
-  resourcify
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
@@ -8,5 +7,8 @@ class Advert < ApplicationRecord
   validates :status, presence: true
   enum status: { created: 0, published: 1, banned: 2, in_review: 4 }, _default: 'created'
   enum category: {auto: 0, moto: 1, velo: 2, foto: 3}
+
+  resourcify
+  has_one :creator
 
 end

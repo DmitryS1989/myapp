@@ -9,7 +9,7 @@
   </div>
 
   <div>
-    <%= f.collection_check_boxes :role_ids, Role.all, :id, :name %>
+    <%= f.collection_check_boxes :role_ids, Role.where(resource_type: nil ), :id, :name %>
   </div>
   <div class="field">
     <%= f.label :email %><br/>

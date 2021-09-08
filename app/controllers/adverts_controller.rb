@@ -1,9 +1,15 @@
 class AdvertsController < ApplicationController
 
   def show_all_adverts
-    @adverts = Advert.all
+    @adverts = Advert.where(status: 'published')
+    authorize @adverts
   end
-
+  def new_advert
+    @user = current_user
+    authorize @user
+    @advert = current_user.adverts.build if user_signed_in?
+    @adverts = current_user.adverts.all
+  end
   def create
     @advert = current_user.adverts.build(adverts_params)
     if @advert.save
@@ -21,6 +27,7 @@ class AdvertsController < ApplicationController
   end
   def update
     @advert= Advert.find(params[:id])
+    authorize @advert
     if @advert.update(adverts_params)
       redirect_to '/show-my-adverts'
     else
