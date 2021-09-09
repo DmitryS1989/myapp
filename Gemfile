@@ -26,6 +26,7 @@ gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-google-oauth2'
 gem "rolify"
 gem "pundit"
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
