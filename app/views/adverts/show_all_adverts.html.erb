@@ -1,8 +1,10 @@
 <div class="col-md-8">
+  <div><h3><%= paginate @adverts %></h3></div>
     <% if @adverts.any? %>
       <h3>All Adverts (<%= @adverts.count %>)</h3>
       <ol class="advert">
         <%= render @adverts %>
       </ol>
     <% end %>
+  <div><h3><%= paginate @adverts %></h3></div>
 </div>

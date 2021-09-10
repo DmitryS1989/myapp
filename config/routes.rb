@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'about' => 'static_pages#about'
   get 'signup' => 'users#new'
   get 'users' => 'users#index'
+  get 'edit_by_admin' => 'users#edit_by_admin'
   get 'show-my-adverts' => 'adverts#new_advert'
   get 'show-all-adverts' => 'adverts#show_all_adverts'
   root 'static_pages#home'

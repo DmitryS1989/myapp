@@ -27,6 +27,7 @@ gem 'omniauth-google-oauth2'
 gem "rolify"
 gem "pundit"
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'kaminari'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -68,5 +69,4 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 group :production do
   gem 'pg'
-  gem 'rails_12factor'
 end

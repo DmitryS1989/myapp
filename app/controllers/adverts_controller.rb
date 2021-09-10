@@ -1,14 +1,14 @@
 class AdvertsController < ApplicationController
 
   def show_all_adverts
-    @adverts = Advert.where(status: 'published')
+    @adverts = Advert.order(created_at: :desc).page params[:page]
     authorize @adverts
   end
   def new_advert
     @user = current_user
     authorize @user
     @advert = current_user.adverts.build if user_signed_in?
-    @adverts = current_user.adverts.all
+    @adverts = current_user.adverts.all.page params[:page]
   end
   def create
     @advert = current_user.adverts.build(adverts_params)
@@ -21,7 +21,7 @@ class AdvertsController < ApplicationController
   end
 
   def edit
-    @adverts = Advert
+    @adverts = Advert.order(created_at: :desc)
     @advert = Advert.find(params[:id])
 
   end

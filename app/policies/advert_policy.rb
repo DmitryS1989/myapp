@@ -6,7 +6,7 @@ class AdvertPolicy < ApplicationPolicy
   end
 
   def show_all_adverts?
-    true
+     true
   end
 
   def update?

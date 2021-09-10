@@ -3,10 +3,12 @@ class UsersController < ApplicationController
 
 
   def index
-    @users = User.order(created_at: :desc)
+    @users = User.order(created_at: :desc).page params[:page]
     authorize  @users
   end
 
 
-
+  def adverts_params
+    params.require(:user).permit(:name, :role, :email)
+  end
 end
