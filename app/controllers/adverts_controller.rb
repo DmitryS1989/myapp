@@ -1,15 +1,32 @@
 class AdvertsController < ApplicationController
 
+  def index_auto
+    @adverts = Advert.where(category: :auto).page params[:page]
+  end
+
+  def index_moto
+    @adverts = Advert.where(category: :moto).page params[:page]
+  end
+
+  def index_velo
+    @adverts = Advert.where(category: :velo).page params[:page]
+  end
+
+  def index_foto
+    @adverts = Advert.where(category: :foto).page params[:page]
+  end
   def show_all_adverts
     @adverts = Advert.order(created_at: :desc).page params[:page]
     authorize @adverts
   end
+
   def new_advert
     @user = current_user
     authorize @user
     @advert = current_user.adverts.build if user_signed_in?
     @adverts = current_user.adverts.all.page params[:page]
   end
+
   def create
     @advert = current_user.adverts.build(adverts_params)
     if @advert.save
@@ -25,6 +42,7 @@ class AdvertsController < ApplicationController
     @advert = Advert.find(params[:id])
 
   end
+
   def update
     @advert= Advert.find(params[:id])
     authorize @advert
@@ -34,7 +52,6 @@ class AdvertsController < ApplicationController
       render 'edit'
     end
   end
-
 
   def destroy
     Advert.find(params[:id]).destroy
