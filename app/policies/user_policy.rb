@@ -9,6 +9,10 @@ class UserPolicy < ApplicationPolicy
     @user.has_any_role?(:admin, :user)
   end
 
+  def edit?
+    @user.has_role? :admin
+  end
+
   def new_advert?
     @user.has_any_role?(:admin, :user)
   end

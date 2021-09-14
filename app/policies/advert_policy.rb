@@ -6,14 +6,18 @@ class AdvertPolicy < ApplicationPolicy
   end
 
   def show_all_adverts?
-     true
+    true
   end
 
   def update?
-    if @user.has_role?(:admin)
-      true
-    elsif @advert.status == 'created' && @user.has_role?(:creator, @advert)
-      true
+    if @user != nil
+      if @user.has_role?(:admin)
+        true
+      elsif @advert.status == 'created' && @user.has_role?(:creator, @advert)
+        true
+      end
+    else
+      false
     end
   end
 end

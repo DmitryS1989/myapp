@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :adverts, dependent: :destroy
   after_create :assign_default_role
 
+
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first
